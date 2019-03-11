@@ -1,4 +1,4 @@
-#include "../include/Cleaner.h"
+#include "Cleaner.h"
 
 Cleaner::~Cleaner(){
 }
