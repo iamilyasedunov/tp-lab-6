@@ -35,9 +35,8 @@ int main(){
     PM.create();
     SM.create();
     */
-    CleanerCreator CC;
-    //CC.create();
-    DriverCreator DC;
+    //CleanerCreator CC;
+    //DriverCreator DC;
     ProgrammerCreator PC;
     TesterCreator TC;
     TLCreator TLC;
