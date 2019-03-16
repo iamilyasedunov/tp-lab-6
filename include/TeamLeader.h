@@ -5,17 +5,21 @@
 #include "interface.Heading.h"
 #include "Programmer.h"
 
+class TLCreator;
+
 const int NUMBER_OF_TEAMLEADERS = 3;
 
 class TeamLeader : public Programmer, public Heading {
+    friend TLCreator;
 private:
     PROJECT project;
     int number_of_subordinate;
-public:
     TeamLeader(int _id, std::string _name, float _payment, float _worktime, PROJECT _project, int _number_of_subordinate) :
         Programmer(_id, _name, _payment, _worktime), project(_project), number_of_subordinate(_number_of_subordinate) {
         this->payment += premium(number_of_subordinate);
     }
+    TeamLeader(){}
+public:
     TeamLeader(int _id, std::string _name, float _payment, float _worktime) :
         Programmer(_id, _name, _payment, _worktime){
         this->payment += premium(number_of_subordinate);
@@ -32,7 +36,6 @@ public:
 
     ~TeamLeader();
 
-    std::vector<TeamLeader> create();
 };
 
 #endif // TEAMLEADER_H

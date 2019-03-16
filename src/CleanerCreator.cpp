@@ -1,12 +1,6 @@
-#include "Cleaner.h"
+#include "CleanerCreator.h"
 
-Cleaner::~Cleaner(){
-}
-void Cleaner::print() const{
-    std::cout<<"   Cleaner::"<<this->id<<" "<<this->name<<" "<<this->payment<<" "<<this->worktime;
-}
-/*
-std::vector<Cleaner> Cleaner::create(){
+void CleanerCreator:: create() {
     std::ifstream input_file("D:/qt-proj/tp_6/employees.txt");
     std::vector<Cleaner> cleaners;
     int loc_id = 0;
@@ -33,6 +27,5 @@ std::vector<Cleaner> Cleaner::create(){
         }else{
             std::cout<<"err";
         }
-        return cleaners;
+        //return cleaners;
 }
-*/

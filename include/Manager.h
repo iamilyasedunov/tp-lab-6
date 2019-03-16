@@ -6,8 +6,10 @@
 
 class Manager : public Employee, public virtual Project
 {
-public:
+protected:
     Manager(int _id, std::string _name) : Employee(_id, _name){}
+    Manager(){}
+public:
     ~Manager(){}
     virtual int find_ind_project(std::string _name){
         for (int i = 0; i < 3; i++){

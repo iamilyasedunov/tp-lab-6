@@ -6,15 +6,19 @@
 
 const int NUMBER_OF_TESTERS = 8;
 
+class TesterCreator;
+
 class Tester : public Engineer
 {
+    friend TesterCreator;
 private:
     float worktime;
     std::string test_technology = "";
-public:
     Tester(int _id, std::string _name, float _payment , float _worktime) :
         Engineer(_id, _name, _payment ),
         worktime(_worktime){}
+    Tester(){}
+public:
 
     ~Tester();
 
@@ -31,8 +35,8 @@ public:
     virtual void set_technology(PROJECT P){
         this->test_technology = P.project_test;
     }
+    virtual float get_worktime_income(float _worktime){return _worktime*this->payment;}
 
-    std::vector<Tester> create();
 };
 
 #endif // TESTER_H

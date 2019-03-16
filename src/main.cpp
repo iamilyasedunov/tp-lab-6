@@ -4,13 +4,22 @@
 #include "SeniorManager.h"
 #include "ProjectManager.h"
 #include "TeamLeader.h"
+#include "AbstractCreator.h"
+#include "CleanerCreator.h"
+#include "DriverCreator.h"
+#include "ProgrammerCreator.h"
+#include "TesterCreator.h"
+#include "TLCreator.h"
+#include "PMCreator.h"
+#include "SMCreator.h"
+
 
 int main(){
     //std::cout<<D.get_income(8)<<" "<<C.get_income(12)<<std::endl;
 
     //Engineer E(13, "Ee", 12);
 
-
+    /*
     Driver C(0, "", 12, 12);
     Cleaner D(0, "", 12, 12);
     Programmer P(0, "", 12, 12);
@@ -25,5 +34,14 @@ int main(){
     TL.create();
     PM.create();
     SM.create();
+    */
+    CleanerCreator CC;
+    //CC.create();
+    DriverCreator DC;
+    ProgrammerCreator PC;
+    TesterCreator TC;
+    TLCreator TLC;
+    PMCreator PMC;
+    SMCreator SMC;
     return 0;
 }

@@ -13,9 +13,10 @@ class Employee {
 protected:
     int id;
     std::string name;
+    Employee(){}
+    Employee(int _id, std::string _name) : id(_id), name(_name) {}
 public:
 
-    Employee(int _id, std::string _name) : id(_id), name(_name) {}
 
     ~Employee();
 

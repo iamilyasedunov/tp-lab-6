@@ -8,10 +8,10 @@
 class Engineer : public Employee, public virtual Project, public virtual WorkTime{
 protected:
     float payment;
-
-public:
     Engineer(int _id, std::string _name, float _payment) : Employee(_id, _name),
           payment(_payment){}
+    Engineer(){}
+public:
     ~Engineer(){}
 
     void print() const;

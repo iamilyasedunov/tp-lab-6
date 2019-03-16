@@ -1,12 +1,6 @@
-#include "Driver.h"
+#include "DriverCreator.h"
 
-Driver::~Driver(){
-}
-void Driver::print() const{
-    std::cout<<"    Driver::"<<this->id<<" "<<this->name<<" "<<this->payment<<" "<<this->worktime;
-}
-/*
-std::vector<Driver> Driver::create(){
+void DriverCreator::create(){
     std::ifstream input_file("D:/qt-proj/tp_6/employees.txt");
     std::vector<Driver> drivers;
     int loc_id = 4;
@@ -33,6 +27,4 @@ std::vector<Driver> Driver::create(){
         }else{
             std::cout<<"err";
         }
-        return drivers;
 }
-*/
