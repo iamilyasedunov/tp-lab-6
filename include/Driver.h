@@ -3,24 +3,27 @@
 
 #include "Personal.h"
 
-const float WORK_TIME_DRIVER = 6;
-const float PAYMENT_DRIVER = 1000;
-const int NUMBER_OF_DRIVER = 4;
-
-class DriverCreator;
-
 class Driver : public Personal{
-    friend DriverCreator;
-protected:
-    float worktime;
-    Driver(int _id, std::string _name, float _payment, float _worktime) :
-        Personal(_id, _name, _payment), worktime(_worktime){}
-    Driver(){}
+
 public:
+    Driver(int _id, std::string _name, float _base, float _worktime){
+        this->id = _id;
+        this->name = _name;
+        this->base = _base;
+        this->worktime = _worktime;
+        set_payment();
+    }
 
-    ~Driver();
+    ~Driver(){}
 
-    void print() const;
+    float get_wotktime_income(float _worktime, float _base) override{
+        this->payment = _worktime * _base;
+        return payment;
+    }
+
+    void set_payment() override{
+        this->payment = get_wotktime_income(this->worktime, this->base);
+    }
 };
 
 #endif // DRIVER_H

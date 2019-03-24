@@ -8,19 +8,17 @@
 #include <string>
 #include <sstream>
 
-class Personal: public Employee, public virtual WorkTime{
+class Personal: public Employee, public WorkTime{
 protected:
-   float payment;
-   Personal(int _id, std::string _name, float _payment) : Employee(_id, _name),
-         payment(_payment){}
-   Personal(){}
+   float base;
 public:
-      ~Personal();
+      Personal(){}
 
-      void print() const;
+      void set_base(float _base){
+          this->base = _base;
+      }
 
-      virtual float get_worktime_income(float _worktime){return _worktime*this->payment;}
-
+      ~Personal(){}
 
 };
 

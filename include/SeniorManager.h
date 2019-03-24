@@ -5,27 +5,30 @@
 
 const int NUMBER_OF_SENIORMANAGERS = 4;
 
-class SMCreator;
-
 class SeniorManager : public ProjectManager
 {
-    friend SMCreator;
 protected:
-    int number_of_subordinate;
-    SeniorManager(int _id, std::string _name, PROJECT _P, int _number_of_subordinate) : ProjectManager(_id, _name, _P), number_of_subordinate(_number_of_subordinate){
-    }
-    SeniorManager(){}
+    float header_premium;
 public:
-    ~SeniorManager(){}
-    virtual float get_project_income(){
-        return P.project_payment + premium();
+    SeniorManager(int _id, std::string _name, float _involvement, PROJECT _project, int _number_of_subordinate, float _header_premium){
+        this->id = _id;
+        this->name = _name;
+        this->involvement = _involvement;
+        this->project = _project;
+        this->number_of_subordinate = _number_of_subordinate;
+        this->header_premium = _header_premium;
+        set_payment();
     }
-    virtual float premium(){
-        return number_of_subordinate*this->P.project_payment*10;
-    }
-    void print() const;
 
-    std::vector<SeniorManager> create();
+    ~SeniorManager() {}
+
+    float premium(int number_of_subordinate) override{
+        return (number_of_subordinate+(this->header_premium))*1000;
+    }
+
+    void set_payment() override{
+        this->payment = premium(this->number_of_subordinate) + get_project_income(this->project, this->involvement);
+    }
 };
 
 #endif // SENIORMANAGER_H

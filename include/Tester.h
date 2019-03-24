@@ -4,39 +4,27 @@
 #include "Engineer.h"
 #include <fstream>
 
-const int NUMBER_OF_TESTERS = 8;
-
-class TesterCreator;
 
 class Tester : public Engineer
 {
-    friend TesterCreator;
-private:
-    float worktime;
-    std::string test_technology = "";
-    Tester(int _id, std::string _name, float _payment , float _worktime) :
-        Engineer(_id, _name, _payment ),
-        worktime(_worktime){}
-    Tester(){}
 public:
+   Tester() : Engineer() {}
 
-    ~Tester();
-
-    void print() const;
-
-    virtual int find_ind_project(std::string _name){
-        for (int i = 0; i < 3; i++){
-            if (P[i].project_name == _name)
-                return i;
-        }
-        return -1;
+   Tester(int _id, std::string _name, float _worktime, float _base, float _involvement, PROJECT _project){
+        this->id = _id;
+        this->name = _name;
+        this->worktime = _worktime;
+        this->base = _base;
+        this->involvement = _involvement;
+        this->project = _project;
+        set_payment();
     }
 
-    virtual void set_technology(PROJECT P){
-        this->test_technology = P.project_test;
+    void set_payment() override{
+        this->payment = get_project_income(this->project, this->involvement) + get_wotktime_income(this->worktime, this->base);
     }
-    virtual float get_worktime_income(float _worktime){return _worktime*this->payment;}
 
+    ~Tester(){}
 };
 
 #endif // TESTER_H

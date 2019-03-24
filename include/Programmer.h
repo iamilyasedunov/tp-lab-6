@@ -4,30 +4,24 @@
 #include "Engineer.h"
 #include <fstream>
 
-const int NUMBER_OF_PPROGRAMMER = 8;
-const std::string NONE = "";
-
-class ProgrammerCreator;
-
 class Programmer : public Engineer{
-    friend ProgrammerCreator;
-protected:
-    float worktime;
-
-    std::string language = NONE;
-    Programmer(int _id, std::string _name, float _payment, float _worktime) :
-        Engineer(_id, _name, _payment),
-        worktime(_worktime){}
-    Programmer(){}
 public:
+    Programmer() : Engineer() {}
 
-    ~Programmer();
-
-    void print() const;
-
-    virtual void set_technology(PROJECT P){
-        this->language = P.project_language;
+    Programmer(int _id, std::string _name, float _worktime, float _base, float _involvement, PROJECT _project){
+        this->id = _id;
+        this->name = _name;
+        this->worktime = _worktime;
+        this->base = _base;
+        this->involvement = _involvement;
+        this->project = _project;
+        set_payment();
     }
 
+    void set_payment() override{
+        this->payment = get_project_income(this->project, this->involvement) + get_wotktime_income(this->worktime, this->base);
+    }
+
+    ~Programmer(){}
 };
 #endif // PROGRAMMER_H

@@ -13,17 +13,28 @@ class Employee {
 protected:
     int id;
     std::string name;
-    Employee(){}
-    Employee(int _id, std::string _name) : id(_id), name(_name) {}
+    float worktime;
+    float payment;
 public:
+    Employee() {}
+    Employee(int _id, std::string _name, float _worktime) :
+        id(_id), name(_name), worktime(_worktime) {}
 
+    ~Employee() {}
 
-    ~Employee();
+    virtual void set_payment() = 0;
 
-    void print() const;
+    std::string get_name(){
+        return this->name;
+    }
 
-    std::vector<std::string> split(const std::string &s, char delim);
+    float get_payment() {
+        return this->payment;
+    }
 
+    int get_id() {
+        return this->id;
+    }
 };
 
 #endif // EMPLOYEE_H

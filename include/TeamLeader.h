@@ -5,36 +5,33 @@
 #include "interface.Heading.h"
 #include "Programmer.h"
 
-class TLCreator;
-
 const int NUMBER_OF_TEAMLEADERS = 3;
 
 class TeamLeader : public Programmer, public Heading {
-    friend TLCreator;
 private:
-    PROJECT project;
     int number_of_subordinate;
-    TeamLeader(int _id, std::string _name, float _payment, float _worktime, PROJECT _project, int _number_of_subordinate) :
-        Programmer(_id, _name, _payment, _worktime), project(_project), number_of_subordinate(_number_of_subordinate) {
-        this->payment += premium(number_of_subordinate);
-    }
-    TeamLeader(){}
 public:
-    TeamLeader(int _id, std::string _name, float _payment, float _worktime) :
-        Programmer(_id, _name, _payment, _worktime){
-        this->payment += premium(number_of_subordinate);
-        int random_ind = rand()%(NUMBER_OF_PROJECT);
-        PROJECT _P = P[random_ind];
-        this->project = _P;
+    TeamLeader() : Programmer() {}
+    ~TeamLeader() {}
+
+    TeamLeader(int _id, std::string _name, float _worktime, float _base, float _involvement, PROJECT _project, int _number_of_subordinate){
+        this->id = _id;
+        this->name = _name;
+        this->worktime = _worktime;
+        this->base = _base;
+        this->involvement = _involvement;
+        this->project = _project;
+        this->number_of_subordinate = _number_of_subordinate;
+        set_payment();
     }
 
-    virtual float premium(int number_of_subordinate){
-        return this->payment*number_of_subordinate/2;
+    float premium(int number_of_subordinate) override{
+        return number_of_subordinate*1000;
     }
 
-    void print() const;
-
-    ~TeamLeader();
+    void set_payment() override{
+        this->payment = premium(this->number_of_subordinate) + get_project_income(this->project, this->involvement) + get_wotktime_income(this->worktime, this->base);
+    }
 
 };
 

@@ -7,17 +7,27 @@
 class Manager : public Employee, public virtual Project
 {
 protected:
-    Manager(int _id, std::string _name) : Employee(_id, _name){}
-    Manager(){}
+    float involvement;
+    PROJECT project;
 public:
-    ~Manager(){}
-    virtual int find_ind_project(std::string _name){
-        for (int i = 0; i < 3; i++){
-            if (P[i].project_name == _name)
-                return i;
-        }
-        return -1;
+    Manager() {}
+    Manager(int _id, std::string _name, float _involvement, PROJECT _project){
+        this->id = _id;
+        this->name = _name;
+        this->involvement = _involvement;
+        this->project = _project;
+        set_payment();
     }
+    ~Manager(){}
+
+    float get_project_income(PROJECT _project, float _involvement) override{
+        return _project.project_budget*_involvement;
+    }
+
+    void set_payment() override{
+        this->payment = get_project_income(this->project, this->involvement);
+    }
+
 };
 
 #endif // MANAGER_H

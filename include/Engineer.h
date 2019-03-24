@@ -7,33 +7,18 @@
 
 class Engineer : public Employee, public virtual Project, public virtual WorkTime{
 protected:
-    float payment;
-    Engineer(int _id, std::string _name, float _payment) : Employee(_id, _name),
-          payment(_payment){}
-    Engineer(){}
+    float base;
+    PROJECT project;
+    float involvement;
 public:
+    Engineer() : Employee() {}
     ~Engineer(){}
 
-    void print() const;
-
-
-
-    virtual int find_ind_project(std::string _name){
-        for (int i = 0; i < 3; i++){
-            if (P[i].project_name == _name)
-                return i;
-        }
-        return -1;
+    float get_project_income(PROJECT _project, float _involvement) override{
+        return _project.project_budget * _involvement;
     }
-
-    virtual float get_project_income(PROJECT P){
-        return P.project_payment + this->payment;
-    }
-    virtual float get_worktime_income(float _worktime){
-        return _worktime*this->payment;
-    }
-    virtual float get_income(PROJECT P, float _payment){
-        return get_project_income(P) + get_worktime_income(_payment);
+    float get_wotktime_income(float _worktime, float _base) override{
+        return _worktime * _base;
     }
 
 

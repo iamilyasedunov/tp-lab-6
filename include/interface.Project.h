@@ -4,34 +4,22 @@
 #include <string>
 #include <vector>
 
-const int NUMBER_OF_PROJECT = 3;
-
 struct PROJECT
 {
     std::string project_name;
-    float project_payment;
-    std::string project_language;
-    std::string project_test;
+    float project_budget;
 };
 
-const PROJECT P1 = {"TBB", 5000, "C++", "gtests"};
-const PROJECT P2 = {"OpenCV", 7000, "Java", "Jtest"};
-const PROJECT P3 = {"ParallelSTL", 9000, "Python3", "Py.test"};
-const PROJECT P[3] = {P1, P2, P3};
+const PROJECT TBB = {"TBB", 500000.0};
+const PROJECT OpenCV = {"OpenCV", 700000.0};
+const PROJECT ParallelSTL = {"ParallelSTL", 900000.0};
+const PROJECT PROJECTS[3] = {TBB, OpenCV, ParallelSTL};
 
 class Project {
 public:
-    virtual ~Project(){}
-
-    virtual float get_project_income(){}
-
-    virtual void set_technology(PROJECT P){}
-
-    virtual int find_ind_project(std::string _name){}
-
-    virtual float get_worktime_income(float _worktime){}
-
-    virtual float get_income(PROJECT P, float _payment){}
+    Project(){}
+    ~Project(){}
+    virtual float get_project_income(PROJECT _project, float _involvement)=0;
 };
 
 

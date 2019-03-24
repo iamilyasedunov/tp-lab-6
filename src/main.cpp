@@ -1,47 +1,15 @@
 #include "Cleaner.h"
 #include "Driver.h"
 #include "Tester.h"
-#include "SeniorManager.h"
+#include "Personal.h"
 #include "ProjectManager.h"
 #include "TeamLeader.h"
-#include "AbstractCreator.h"
-#include "CleanerCreator.h"
-#include "DriverCreator.h"
-#include "ProgrammerCreator.h"
-#include "TesterCreator.h"
-#include "TLCreator.h"
-#include "PMCreator.h"
-#include "SMCreator.h"
-
+#include "Manager.h"
+#include "SeniorManager.h"
+#include "EmployeeFactory.h"
 
 int main(){
-    //std::cout<<D.get_income(8)<<" "<<C.get_income(12)<<std::endl;
-
-    //Engineer E(13, "Ee", 12);
-
-    /*
-    Driver C(0, "", 12, 12);
-    Cleaner D(0, "", 12, 12);
-    Programmer P(0, "", 12, 12);
-    Tester T(0, "", 12, 12);
-    TeamLeader TL(0, "", 12, 12);
-    ProjectManager PM(0, "", P1);
-    SeniorManager SM(0, "", P1, 0);
-    D.create();
-    C.create();
-    P.create();
-    T.create();
-    TL.create();
-    PM.create();
-    SM.create();
-    */
-    CleanerCreator CC;
-    //CC.create();
-    DriverCreator DC;
-    ProgrammerCreator PC;
-    TesterCreator TC;
-    TLCreator TLC;
-    PMCreator PMC;
-    SMCreator SMC;
+    EmployeeFactory EF;
+    EF.creator();
     return 0;
 }

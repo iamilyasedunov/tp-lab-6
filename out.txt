@@ -1,38 +1,38 @@
-   Cleaner::0 Zachary Justin Gray 1000 40 40000
-   Cleaner::1 Jaden Richard Torres 1000 40 40000
-   Cleaner::2 Aidan Justin Young 1000 40 40000
-   Cleaner::3 Hayden Kyle Rodriguez 1000 40 40000
-    Driver::4 James Xavier Ross 1500 40 60000
-    Driver::5 Jack Dylan Harris 1500 40 60000
-    Driver::6 Juan Bryan Flores 1500 40 60000
-    Driver::7 Mason Sebastian Sanders 1500 40 60000
-Programmer::8 Diego William Robinson 2000 40  87000 TBB
-Programmer::9 Jeremiah Hayden Powell 2200 50  119200 OpenCV
-Programmer::10 Ian Jacob Green 2000 45  101000 ParallelSTL
-Programmer::11 Jack Blake Wright 2000 24  57000 OpenCV
-Programmer::12 Jacob Thomas Hill 2100 40  91100 TBB
-Programmer::13 Jordan Thomas Rodriguez 2000 20  51000 ParallelSTL
-Programmer::14 Luke Angel Rodriguez 2300 30  80300 ParallelSTL
-Programmer::15 Lauren Sofia Phillips 2500 40  109500 OpenCV
-    Tester::16 Rachel Jessica Gray 2000 42  95000 ParallelSTL
-    Tester::17 Rebecca Ariana Scott 2600 20  61600 OpenCV
-    Tester::18 Victoria Maria Morris 2000 10  27000 TBB
-    Tester::19 Gabriella Sophia Wright 2100 30  74100 ParallelSTL
-    Tester::20 Alexandra Kaylee Barnes 2000 40  87000 TBB
-    Tester::21 Paige Madeline Ross 2200 20  55200 ParallelSTL
-    Tester::22 Maria Lily Morgan 2000 40  89000 OpenCV
-    Tester::23 Arianna Jada Torres 2300 40  99300 TBB
-TeamLeader::24 Destiny Alyssa Martinez 24000 20 OpenCV 511000 OpenCV
-TeamLeader::25 Jordan Vanessa Walker 25200 30 ParallelSTL 790200 ParallelSTL
-TeamLeader::26 Isabella Vanessa Edwards 24600 40 OpenCV 1.0156e+006 OpenCV
-PrjManager::27 Lillian Sara Lee ParallelSTL 27000
-PrjManager::28 Victoria Michelle Clark ParallelSTL 27000
-PrjManager::29 Emma Rebecca Richardson ParallelSTL 27000
-PrjManager::30 Gavin Diego Peterson ParallelSTL 27000
-PrjManager::31 Xavier Cody Bennett ParallelSTL 27000
-PrjManager::32 Samuel Julian Wilson ParallelSTL 27000
-PrjManager::33 Sean Bryan Edwards ParallelSTL 27000
-SnrManager::33 Sean Bryan Edwards TBB 10 30000
-SnrManager::34 Colin Daniel Campbell TBB 10 30000
-SnrManager::35 Mason Dominic Gonzales TBB 10 30000
-SnrManager::36 Isaiah Eric Watson TBB 10 30000
+1 Zachary Justin Lol 40000
+2 Aidan Justin Sret 40000
+3 Hayden Kyle Mabuta 40000
+4 James Xavier Ross 60000
+5 Jack Dylan Harris 60000
+6 Juan Bryan Flores 60000
+7 Mason Sebastian Sanders 60000
+8 Diego William Robinson 80500
+9 Jeremiah Hayden Powell 110700
+10 Ian Jacob Green 90900
+11 Jack Blake Wright 48700
+12 Jacob Thomas Hill 84500
+13 Jordan Thomas Rodriguez 40900
+14 Luke Angel Rodriguez 69900
+15 Lauren Sofia Phillips 100700
+16 Rachel Jessica Gray 84900
+17 Rebecca Ariana Scott 52700
+18 Victoria Maria Morris 20500
+19 Gabriella Sophia Wright 63900
+20 Alexandra Kaylee Barnes 80500
+21 Paige Madeline Ross 44900
+22 Maria Lily Morgan 80700
+23 Arianna Jada Torres 92500
+24 Destiny Alyssa Martinez 127000
+25 Jordan Vanessa Walker 186000
+26 Isabella Vanessa Edwards 210000
+27 Lillian Sara Lee 49000
+28 Victoria Michelle Clark 50000
+29 Emma Rebecca Richardson 24000
+30 Gavin Diego Peterson 30000
+31 Xavier Cody Bennett 20000
+32 Samuel Julian Wilson 40000
+33 Sean Bryan Edwards 21000
+34 Colin Daniel Campbell 52000
+35 Mason Dominic Gonzales 1045000
+36 Isaiah Eric Watson 1045000
+37 Joshua Antonio Peterson 1537000
+38 Jayden Carlos Griffin 2049000

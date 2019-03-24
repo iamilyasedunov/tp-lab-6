@@ -9,8 +9,9 @@
 class Heading
 {
 public:
-    virtual ~Heading(){}
-    virtual float premium(int number_of_subordinate){}
+    Heading(){}
+    ~Heading(){}
+    virtual float premium(int number_of_subordinate) = 0;
 };
 
 #endif // HEADING_H
